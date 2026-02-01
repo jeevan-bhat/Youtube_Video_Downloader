@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Weather App</title>
-    <!-- <link rel="stylesheet" href="/index.css"> -->
- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-
-
-
-
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 80px;">
+<body>
 
-    <h1 style="font-size: larger;text-shadow: 1px 1px;color: #E6EDF5
-;">Weather Application</h1>
+<div class="container">
+    <h2>My Tasks</h2>
+    <button style="background-color: black;margin-bottom: 10px;width: 90px;height: 30px;border-radius: 10px;"><a href="/logout" style="text-decoration: none;font-weight: bold;">Logout</a></button>
 
     <form method="POST">
-        <input type="text" name="city" placeholder="Enter city name" required>
-        <br><br>
-        <button type="submit">Get Weather</button>
+        <input name="task" placeholder="New task" required style="background-color: beige;width: 200px;height: 20px;border-radius: 15px;">
+        <button style="width: 60px;border-radius: 10px;height: 26px;background-color: rgb(0, 0, 0);color: white;">Add</button>
     </form>
 
-    {% if weather %}
-        <h3>Weather Report</h3>
-        <p><strong>City:</strong> {{ weather.city }}</p>
-        <p><strong>Temperature:</strong> {{ weather.temperature }} °C</p>
-        <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
-        <p><strong>Condition:</strong> {{ weather.condition }}</p>
-        <p><strong>Wind Speed:</strong> {{ weather.wind }} m/s</p>
-    {% endif %}
+    <ul>
+        {% for t in tasks %}
+        <li class="{{ t[2]|lower }}">
+            {{ t[1] }}
+            <span>{{ t[2] }}</span>
+            <a href="/toggle/{{ t[0] }}">✔</a>
+            <a href="/delete/{{ t[0] }}">✖</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
-    {% if error %}
-        <p style="color: #9B1C1C;">{{ error }}</p>
-    {% endif %}
-
-
-<footer style="color:#ada6a6;width: 100vw;position:fixed;align-items:center ;justify-content: center;bottom:0;">&copy;Jeevan Bhat<br><span style="color:white ">Email:</span>jeevanbhat33@gmail.com</footer>
 </body>
 </html>

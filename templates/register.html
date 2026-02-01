@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container1" style="display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 175px;">
+    <h2>Register</h2>
+    <form method="POST">
+        <input name="username" required style="    border-radius: 5px;
+    width: 200px;
+    height: 25px;"><br><br>
+        <input name="password" type="password" required style="    border-radius: 5px;
+    width: 200px;
+    height: 25px;"><br><br>
+
+        <button style="    position: relative;
+    left: 62px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+">Register</button>
+    </form>
+</div>
+
+</body>
+</html>

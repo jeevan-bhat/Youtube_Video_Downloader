@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container2" style="display: flex;flex-direction: column;justify-content: center;align-items: center;padding-top: 200px;">
+    <h2>Login</h2>
+    <form method="POST">
+        <input name="username" placeholder="Username" required style="width: 200px;height: 25px;border-radius: 5px;"><br><br>
+        <input name="password" type="password" placeholder="Password" required style="width: 200px;height: 25px;border-radius: 5px;"><br><br>
+        <button style="position: relative;
+    left: 75px;background-color: black;color: white;width: 50px;font-weight: bolder;border-radius: 10px;height: 30px;">Login</button><br><br>
+    </form>
+    <button style="background-color: black;width: 100px;font-weight: bolder;border-radius: 10px;height: 30px;"><a href="/register" style="text-decoration: none;">Register</a></button>
+</div>
+
+</body>
+</html>
