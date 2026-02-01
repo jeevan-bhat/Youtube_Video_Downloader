@@ -1,0 +1,29 @@
+ body{
+    /* background-color:#FF6B01; */
+    /* color:#edf756; */
+    /* color: #FF6A00; */
+    background-image: url("IMAGE.png") ;
+    background-repeat: no-repeat;
+    color: #D94A1E;
+
+}
+input{
+    width: 250px;
+    height: 30px;
+    border:2px solid #353535;
+    border-radius: 10px;
+    /* align-items: center; */
+    text-align: center;
+    font-weight: bolder;
+}
+button{
+    background-color: #353535;
+    color: #ffffff;
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+}
+p,h3{
+    color: #C9D1D9;
+
+}

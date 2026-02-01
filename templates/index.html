@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <!-- <link rel="stylesheet" href="/index.css"> -->
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+
+
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 80px;">
+
+    <h1 style="font-size: larger;text-shadow: 1px 1px;color: #E6EDF5
+;">Weather Application</h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <br><br>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+        <h3>Weather Report</h3>
+        <p><strong>City:</strong> {{ weather.city }}</p>
+        <p><strong>Temperature:</strong> {{ weather.temperature }} °C</p>
+        <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+        <p><strong>Condition:</strong> {{ weather.condition }}</p>
+        <p><strong>Wind Speed:</strong> {{ weather.wind }} m/s</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: #9B1C1C;">{{ error }}</p>
+    {% endif %}
+
+
+<footer style="color:#ada6a6;width: 100vw;position:fixed;align-items:center ;justify-content: center;bottom:0;">&copy;Jeevan Bhat<br><span style="color:white ">Email:</span>jeevanbhat33@gmail.com</footer>
+</body>
+</html>
