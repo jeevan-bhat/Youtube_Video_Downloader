@@ -3,4 +3,4 @@ services:
     name: youtube-downloader
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python index.py
+    startCommand: gunicorn main:app
