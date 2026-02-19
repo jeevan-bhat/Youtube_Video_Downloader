@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body style="font-family: Arial; text-align:center; ">
+    <nav>
+       <p><h1>UTube-JB</h1></p>
+       <img src="{{ url_for('static', filename='yt.png') }}" width="30">
+
+    </nav>
+    <h2>🎥 YouTube Video Downloader (1080p)</h2>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="https://www.youtube.com/watch?v=...." size="90" required>
+        <br><br>
+        <button type="submit">Download</button>
+    </form>
+
+    <br>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if success %}
+        <p style="color:green;">{{ success }}</p>
+        <a href="/download/{{ filename }}">
+            <button>⬇ Download Video File</button>
+        </a>
+    {% endif %}
+
+    <footer>
+        <p><h2>Devoloped by : </h2><h3 style="text-decoration: underline;">Jeevan Bhat</h3></p>
+
+        <p>Email  📧: jeevanbhat33@gmail.com</p>
+
+    </footer>
+</body>
+</html>
