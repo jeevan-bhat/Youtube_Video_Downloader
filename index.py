@@ -6,14 +6,13 @@ app = Flask(__name__)
 
 DOWNLOAD_FOLDER = "downloads"
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
-
 def download_url(url):
     ydl_opts = {
-    'format': 'best[height<=1080]',
-    'noplaylist': True,
-    'outtmpl': 'downloads/%(title)s.%(ext)s'
-}
-
+        'format': 'best[height<=1080]',
+        'noplaylist': True,
+        'outtmpl': 'downloads/%(title)s.%(ext)s',
+        'cookiefile': 'cookies.txt',   # 👈 ADD THIS
+    }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
